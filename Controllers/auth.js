@@ -1,9 +1,10 @@
 import express from "express";
+import { v2 as cloudinary } from 'cloudinary';
 import { User } from '../Models/User.js'
 
 export const register = async (req, res) => {
 
-    const { name, username, password } = req.body;
+    const { name, username, password, profileImageUrl} = req.body;
     if (name == "" || username == "" || password == "") {
         return res.json({ message: "All fields required!" });
     }
@@ -32,8 +33,11 @@ export const register = async (req, res) => {
             return res.json({ message: "Password should contain 8 or more characters!" });
         }
     }
+     const cloudinaryRes=await cloudinary.uploader.upload(profileImageUrl,{
+          folder:"/postup/postup_Users"
+    })
 
-    await User.create({ name, username, password });
+    await User.create({ name, username, password, profileImageUrl:cloudinaryRes.secure_url });
     res.json({ message: "User registered successfully." });
 
 }

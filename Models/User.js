@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     username: { type: String, require: true, minlength: 5, trim: true, lowercase: true },
     password: { type: String, require: true, trim: true, select: true },
     profileImageUrl:{type:String},
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: String, default: new Date().toLocaleString()}
 });
 
 export const User = mongoose.model("User", userSchema);
