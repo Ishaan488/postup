@@ -5,8 +5,8 @@ const postSchema= new mongoose.Schema({
     titleContent:{type:String,require:true},
     textContent:{type:String,require:true},
     imageContent:{type:String},
-    likeCount:{type:Number},
-    dislikeCount:{type:Number},
+    likeCount:{type:Number, default:0},
+    dislikeCount:{type:Number,default:0},
     postedAt:{type:String, default: new Date().toLocaleString()},
 })
 
