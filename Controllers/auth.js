@@ -1,5 +1,6 @@
 import express from "express";
 import { v2 as cloudinary } from 'cloudinary';
+import bcrypt, { compare } from 'bcryptjs';
 import { User } from '../Models/User.js'
 
 export const register = async (req, res) => {
@@ -36,8 +37,8 @@ export const register = async (req, res) => {
      const cloudinaryRes=await cloudinary.uploader.upload(profileImageUrl,{
           folder:"/postup/postup_Users"
     })
-
-    await User.create({ name, username, password, profileImageUrl:cloudinaryRes.secure_url });
+    const hashPassword=await bcrypt.hash(password,10);
+    await User.create({ name, username, password:hashPassword, profileImageUrl:cloudinaryRes.secure_url });
     res.json({ message: "User registered successfully." });
 
 }
@@ -52,8 +53,9 @@ export const login = async (req, res) => {
         if (!currentUser) {
             return res.json({ message: "Username does not exist!" });
         }
-        console.log(currentUser);
-        if (password != currentUser.password) {
+        // console.log(currentUser);
+        let passwordCheck=await bcrypt.compare(password,currentUser.password);
+        if (!passwordCheck) {
             return res.json({ message: "Incorrect password!" });
         }
     }
