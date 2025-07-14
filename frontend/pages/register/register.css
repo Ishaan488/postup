@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: rgb(180, 99, 255);
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 20px;
+    margin-bottom: 10vh;
+}
+
+nav h2 {
+    padding-left: 10px;
+}
+
+#registerFormContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: rgb(255, 255, 255);
+    font-family: poppins;
+    width: 100%;
+    height: 50%;
+}
+
+#registerForm {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+}
+
+@media (max-width:800px) and (min-width:300px) {
+    #registerForm {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 65%;
+    }
+
+    #registerForm h1 {
+        font-size: 30px;
+    }
+}
+
+label {
+    font-size: small;
+    align-self: self-start;
+}
+
+input {
+    width: 98%;
+    height: 35px;
+    color: rgb(61, 61, 61);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+form div {
+    padding: 0%;
+    margin: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+}

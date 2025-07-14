@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostUp-Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav>
+        <h2 id="nav-title">PostUp</h2>
+    </nav>
+    <div id="loginFormContainer">
+    <div id="loginForm">
+        <h1>User Login</h1>
+        <form action="" method="">
+            <div>
+                <label class="form-label">Username</label>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label class="form-label">Password</label>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <input type="submit" style="width: 98%; height: 30px; border-radius: 10px; background-color: #4b48fe; color: rgb(255, 255, 255);" value="Login">
+            </div>
+                <!-- <%if(userFind==null){ %>
+                    <div style="color: red; font-size:medium;" >User not registered!!</div>
+                    <div style="color: cornflowerblue; font-size: medium;">Please register first</div>
+                <%} else if(passwordCheck==false){%>
+                    <div style="color: red; font-size:medium;">Incorrect password!!</div><%}%> -->
+            <div style="font-size: small; display:flex;">
+                Don't have an account ? <a href="/register" style="color: cornflowerblue; font-size: small;">Register</a>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
