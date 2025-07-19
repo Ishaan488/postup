@@ -15,7 +15,7 @@
     <div id="registerFormContainer">
         <div id="registerForm">
             <h1>User Register</h1>
-            <form enctype="multipart/form-data" id="registerForm">
+            <form enctype="multipart/form-data" id="register-form">
                 <div>
                     <label class="form-label">Name</label>
                     <input type="text" name="name" id="name">
@@ -39,7 +39,14 @@
                 </div>
 
                 <div style="font-size: small; display:flex;">
-                    Already have account ? <a href="/" style="color: cornflowerblue; font-size: small;">Login</a>
+                    Already have account ? <a href="../login/login.html"
+                        style="color: cornflowerblue; font-size: small;">Login</a>
+                </div>
+                <div id="loadingBarContainer">
+                <div id="loadingBar">
+                    <div id="loadingCircle"></div><div id="checkStatus">✅</div>
+                    <div id="loadingStatus">Loading</div>
+                </div>
                 </div>
             </form>
         </div>
@@ -47,4 +54,5 @@
 
 </body>
 <script src="./register.js"></script>
+
 </html>
