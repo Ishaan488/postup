@@ -5,11 +5,11 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const fileInput = document.getElementById("file-input").files[0];
-    const loadingBarContainer=document.getElementById("loadingBarContainer");
-    const loadingBar=document.getElementById("loadingBar");
-    const loadingStatus=document.getElementById("loadingStatus");
-    const loadingCircle=document.getElementById("loadingCircle");
-    const checkStatus=document.getElementById("checkStatus");
+    const loadingBarContainer = document.getElementById("loadingBarContainer");
+    const loadingBar = document.getElementById("loadingBar");
+    const loadingStatus = document.getElementById("loadingStatus");
+    const loadingCircle = document.getElementById("loadingCircle");
+    const checkStatus = document.getElementById("checkStatus");
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -35,10 +35,10 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         profileImageUrl
     };
 
-    loadingCircle.style.display="block";
-    loadingBar.style.backgroundColor="#c3fe95ff";
-    document.getElementById("loadingStatus").innerText="Fetching";
-    document.getElementById("loadingBarContainer").style.display="flex";
+    loadingCircle.style.display = "block";
+    loadingBar.style.backgroundColor = "#c3fe95ff";
+    loadingStatus.innerText = "Fetching";
+    loadingBarContainer.style.display = "flex";
 
     const response = await fetch("http://localhost:5000/api/register", {
         method: "POST",
@@ -46,26 +46,26 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         body: JSON.stringify(payload)
     });
 
-    document.getElementById("loadingStatus").innerText="Loading";
-    document.getElementById("loadingBarContainer").style.display="flex";
+    loadingStatus.innerText = "Loading";
+    loadingBarContainer.style.display = "flex";
     await delay(3000);
     // loadingBar.style.backgroundColor="#c3fe95ff";
-    document.getElementById("loadingStatus").innerText="Checking Data";
+    loadingStatus.innerText = "Checking Data";
     await delay(3000);
 
     const data = await response.json();
-    if(data.message!="User registered successfully."){
-        loadingCircle.style.display="none";
-        loadingBar.style.backgroundColor="#fe9795ff";
-        document.getElementById("loadingStatus").innerText=data.message;
+    if (data.message != "User registered successfully.") {
+        loadingCircle.style.display = "none";
+        loadingBar.style.backgroundColor = "#fe9795ff";
+        loadingStatus.innerText = data.message;
     }
     if (data.message === "User registered successfully.") {
-        document.getElementById("loadingCircle").style.display="none";
-        document.getElementById("checkStatus").style.display="block";
-        loadingBar.style.backgroundColor="#c3fe95ff";
-            document.getElementById("loadingStatus").innerText="User registered successfully";
-            await delay(1000);
-            window.location.href = "http://127.0.0.1:3000/frontend/pages/login/login.html";
+        loadingCircle.style.display = "none";
+        checkStatus.style.display = "block";
+        loadingBar.style.backgroundColor = "#c3fe95ff";
+        loadingStatus.innerText = "User registered successfully";
+        await delay(1000);
+        window.location.href = "http://127.0.0.1:3000/frontend/pages/login/login.html";
 
     }
 });
