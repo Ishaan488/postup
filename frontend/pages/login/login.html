@@ -13,14 +13,14 @@
     <div id="loginFormContainer">
     <div id="loginForm">
         <h1>User Login</h1>
-        <form action="" method="">
+        <form action="" method="" enctype="multipart/form-data">
             <div>
                 <label class="form-label">Username</label>
-                <input type="email" name="email">
+                <input type="username" name="username" id="username">
             </div>
             <div>
                 <label class="form-label">Password</label>
-                <input type="password" name="password">
+                <input type="password" name="password" id="password">
             </div>
             <div>
                 <input type="submit" style="width: 98%; height: 30px; border-radius: 10px; background-color: #4b48fe; color: rgb(255, 255, 255);" value="Login">
@@ -37,4 +37,5 @@
         </div>
     </div>
 </body>
+<script src="./login.js"></script>
 </html>
