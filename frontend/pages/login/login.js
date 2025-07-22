@@ -18,7 +18,8 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     const response = await fetch("http://localhost:5000/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password }),
+        credentials:"include"
     });
 
     loadingStatus.innerText = "Loading";
@@ -33,7 +34,9 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         loadingBar.style.backgroundColor = "#fe9795ff";
         loadingStatus.innerText = data.message;
     }
+    // const token = jwt.sign({ username }, 'qwertyuiop', { expiresIn: '1h' });
     if (data.message === "User logged in successfully.") {
+        // const token = jwt.sign({ username }, 'qwertyuiop', { expiresIn: '1h' });
         loadingCircle.style.display = "none";
         checkStatus.style.display = "block";
         loadingBar.style.backgroundColor = "#c3fe95ff";
@@ -42,4 +45,3 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         window.location.href = "http://127.0.0.1:3000/frontend/pages/home/home.html";
     }
 });
-

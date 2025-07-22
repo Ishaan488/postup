@@ -6,10 +6,13 @@ import cors from 'cors'
 import { v2 as cloudinary } from 'cloudinary';
 import authRoutes from './Routes/auth.js'
 import homeRoutes from './Routes/home.js'
+import cookieParser from 'cookie-parser'
 
 const app=express();
 app.use(express.json({limit:'10mb'}));
-app.use(cors());
+app.use(cors({origin:"http://127.0.0.1:3000",
+    credentials: true}));
+app.use(cookieParser());
 
 cloudinary.config({ 
         cloud_name: `${process.env.cloud_name}`, 

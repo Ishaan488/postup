@@ -1,7 +1,9 @@
 import express from "express";
+import 'dotenv/config';
 import { v2 as cloudinary } from 'cloudinary';
 import bcrypt, { compare } from 'bcryptjs';
 import { User } from '../Models/User.js'
+import jwt from 'jsonwebtoken'
 
 export const register = async (req, res) => {
 
@@ -59,6 +61,8 @@ export const login = async (req, res) => {
             return res.json({ message: "Incorrect password!" });
         }
     }
-
-    return res.json({ message: "User logged in successfully." })
+    const token = jwt.sign({ username }, `${process.env.jwt_secretkey}`, { expiresIn: '1h' });
+    console.log(token);
+    
+    return res.json({ message: "User logged in successfully.",token:token });
 }
