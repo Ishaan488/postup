@@ -5,7 +5,7 @@
 }
 
 html {
-    background-color: rgb(205, 147, 255);
+    background-color: #767fad;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -104,8 +104,9 @@ nav h2 {
     color: #e1e1e1;
 }
 
-.allPostsContainer {
-    background-color: aqua;
+#allPostsContainer {
+    background-color: rgba(255, 255, 255, 0);
+    font-family: poppins;
     margin-left: 20%;
     margin-top: 86px;
     height: auto;
@@ -116,8 +117,73 @@ nav h2 {
     z-index: 0;
 }
 
-.allPostsContainer div {
-    height: 100px;
-    width: 500px;
-    background-color: bisque;
+dotlottie-wc{
+    position: fixed;
+    left: 50vw;
+    top:30vh;
+    font-family: poppins;
+    font-size:xx-large;
+    font-weight: 900;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#loginFirst{
+    width: 100%;
+    height: 100%;
+}
+
+#postBox{
+    height: auto;
+    width: auto;
+    max-width: 700px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 5px;
+    margin:5px;
+}
+#postAdminDetailsBar{
+    background-color: #b2b2b2;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    /* height: 5%; */
+}
+#postProfilePicture{
+    height: 20px;
+    width: 20px;
+    /* background-image: url("https://image.lexica.art/full_jpg/a6c473a6-51e3-4679-88bd-31efa77a3599"); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    /* border: none; */
+    cursor: pointer;
+    margin-right: 5px;
+}
+#postContent{
+    /* padding: 5px; */
+    margin-top: 5px;
+    max-width: 680px;
+    height: auto;
+}  
+#postContent img{
+    max-width:680px;
+}
+
+#postDetailsBar{
+    padding: 5px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#postedAt{
+    font-size: small;
 }
