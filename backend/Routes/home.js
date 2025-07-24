@@ -9,7 +9,7 @@ import { userDetails } from "../Controllers/userDetails.js";
 const router=express.Router();
 
 router.post('/:username/home/createPost',createPost);
-router.get('/:username/home/posts',authenticateToken,posts);
+router.get('/:username/home/posts',posts);
 router.get('/:username/home/myPosts',myPosts);
 router.get('/:username/home/userDetails',userDetails);
 

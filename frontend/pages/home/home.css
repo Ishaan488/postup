@@ -146,29 +146,37 @@ dotlottie-wc{
 }
 #postAdminDetailsBar{
     background-color: #b2b2b2;
-    padding: 2px;
+    padding: 5px;
     display: flex;
     align-items: center;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     /* height: 5%; */
 }
 #postProfilePicture{
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     /* background-image: url("https://image.lexica.art/full_jpg/a6c473a6-51e3-4679-88bd-31efa77a3599"); */
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    border-width: 2.5px;
+    border-width: 1px;  
     border-style: solid;
     border-color: rgb(255, 255, 255);
     /* border: none; */
     cursor: pointer;
     margin-right: 5px;
 }
+
+#titleBar{
+    padding-left: 5px;
+    font-size: 30px;
+    background-color: #828282;
+}
+
 #postContent{
     /* padding: 5px; */
-    margin-top: 5px;
+    margin-top: 0px;
     max-width: 680px;
     height: auto;
 }  

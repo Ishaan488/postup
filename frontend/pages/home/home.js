@@ -4,6 +4,30 @@ const logoutButton = document.getElementById("logoutButton");
 const allPostsContainer = document.getElementById("allPostsContainer");
 const loginFirst = document.getElementById("loginFirst");
 
+const allPostsMapping=async (decoded)=>{
+    const res = await fetch(`http://localhost:5000/api/
+        ${decoded.username}/home/posts`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include"
+        });
+        let allPostsResponse=await res.json();
+
+        const posts=await allPostsResponse.map(post=>`<div id="postBox">
+                <div id="postAdminDetailsBar"><button id="postProfilePicture"></button>${post.username}</div>
+                <div id="titleBar">${post.titleContent}</div>
+                <div id="postContent"><img
+                        src="${post.imageContent}"
+                        alt=""></div>
+                <div id="postDetailsBar">
+                    <div><button id="likeButton">Like</button><button id="dislikeButton">Dislike</button></div>
+                    <div id="postedAt">${post.postedAt}</div>
+                </div>
+            </div>`);
+        
+        allPostsContainer.innerHTML=posts;
+}
+
 const homeFunction = async () => {
 
     let usernameToken = localStorage.getItem("token");
@@ -14,10 +38,11 @@ const homeFunction = async () => {
         loginFirst.style.display="block";
     }
     else {
-        allPostsContainer.style.display="flex";
         loginFirst.style.display="none";
         console.log(usernameToken);
         const decoded = jwt_decode(usernameToken);
+        await allPostsMapping(decoded);
+        allPostsContainer.style.display="flex";
         console.log(decoded.username);
         const userDetailsResponse = await fetch(`http://localhost:5000/api/${decoded.username}/home/userDetails`, {
             method: "GET",
@@ -27,7 +52,7 @@ const homeFunction = async () => {
 
         const userDetails = await userDetailsResponse.json();
         console.log(userDetails);
-        profilePhoto.style.backgroundImage = `url(${userDetails.profileImageUrl})`;
+        profilePhoto.style.backgroundImage = `url(${userDetails.profileImageUrl}`;
         welcomeMessage.innerText = `Welcome, ${userDetails.name}`;
     }
 }
