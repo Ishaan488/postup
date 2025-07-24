@@ -27,6 +27,17 @@ nav {
     z-index: 1;
 }
 
+#profileAndWelcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcomeMessage{
+    margin-right: 20px;
+    font-size: medium;
+}
+
 nav h2 {
     padding-left: 10px;
     align-self: center;
@@ -35,19 +46,17 @@ nav h2 {
 #profilePicture {
     height: 45px;
     width: 45px;
-    background-image: url("https://image.lexica.art/full_jpg/a6c473a6-51e3-4679-88bd-31efa77a3599");
+    /* background-image: url("https://image.lexica.art/full_jpg/a6c473a6-51e3-4679-88bd-31efa77a3599"); */
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    border: none;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    /* border: none; */
     cursor: pointer;
 }
 
-/* #profilePicture img{
-    height:100%;
-    width: 100%;
-    border-radius: 50%;
-} */
 .sidebarContainer {
     font-family: poppins;
     height: 100%;

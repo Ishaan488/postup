@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/jwt-decode.min.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -13,22 +14,29 @@
 <body>
     <nav>
         <h2 id="nav-title">PostUp</h2>
-        <button id="profilePicture">
-        </button>
+        <div id="profileAndWelcome">
+            <h2 id="welcomeMessage"></h2>
+            <button id="profilePicture"></button>
+        </div>
+        
     </nav>
     <div class="sidebarContainer">
         <div class="sidebar">
-        <a href=""><i class="fa fa-fw fa-home"></i> Home</a>
-        <a href=""><i class="fa fa-fw fa-user"></i> Account</a>
-        <a href=""><i class="fa fa-fw fa-image"></i> My Posts</a>
-        <a href=""><i class="fa fa-fw fa-envelope"></i> Contact</a>
-        <a href="" id="logoutButton"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            <a href=""><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href=""><i class="fa fa-fw fa-user"></i> Account</a>
+            <a href=""><i class="fa fa-fw fa-image"></i> My Posts</a>
+            <a href=""><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <a href="" id="logoutButton"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         </div>
     </div>
     <div class="allPostsContainer">
         <div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="./home.js" ></script>
 </body>
+
+
 
 </html>

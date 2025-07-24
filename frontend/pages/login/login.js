@@ -34,9 +34,11 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         loadingBar.style.backgroundColor = "#fe9795ff";
         loadingStatus.innerText = data.message;
     }
-    // const token = jwt.sign({ username }, 'qwertyuiop', { expiresIn: '1h' });
+
     if (data.message === "User logged in successfully.") {
-        // const token = jwt.sign({ username }, 'qwertyuiop', { expiresIn: '1h' });
+        localStorage.setItem("token",data.token);
+        const decoded = jwt_decode(data.token);
+        console.log(decoded.username);
         loadingCircle.style.display = "none";
         checkStatus.style.display = "block";
         loadingBar.style.backgroundColor = "#c3fe95ff";
