@@ -3,6 +3,7 @@ let welcomeMessage = document.getElementById("welcomeMessage");
 const logoutButton = document.getElementById("logoutButton");
 const allPostsContainer = document.getElementById("allPostsContainer");
 const loginFirst = document.getElementById("loginFirst");
+const sideBar=document.getElementById("sidebarContainer");
 
 const allPostsMapping=async (decoded)=>{
     const res = await fetch(`http://localhost:5000/api/
@@ -12,8 +13,9 @@ const allPostsMapping=async (decoded)=>{
             credentials: "include"
         });
         let allPostsResponse=await res.json();
+        console.log(allPostsResponse);
 
-        const posts=await allPostsResponse.map(post=>`<div id="postBox">
+        const posts=allPostsResponse.map(post=>`<div id="postBox">
                 <div id="postAdminDetailsBar"><button id="postProfilePicture"></button>${post.username}</div>
                 <div id="titleBar">${post.titleContent}</div>
                 <div id="postContent"><img
@@ -25,7 +27,7 @@ const allPostsMapping=async (decoded)=>{
                 </div>
             </div>`);
         
-        allPostsContainer.innerHTML=posts;
+        allPostsContainer.innerHTML=posts.join("");
 }
 
 const homeFunction = async () => {
@@ -35,7 +37,8 @@ const homeFunction = async () => {
         welcomeMessage.innerHTML = `<a href="http://127.0.0.1:3000/frontend/pages/login/login.html">Login</a>`;
         logoutButton.style.display = "none";
         allPostsContainer.style.display="none";
-        loginFirst.style.display="block";
+        sideBar.style.display="none";
+        loginFirst.style.display="flex";
     }
     else {
         loginFirst.style.display="none";
@@ -60,9 +63,14 @@ const homeFunction = async () => {
 document.getElementById("logoutButton").onclick = async () => {
     localStorage.removeItem("token");
     console.log("redirecting");
+        window.location.href = "http://127.0.0.1:3000/frontend/pages/login/login.html";
+    console.log("done");
+}
+document.getElementById("pillbarLogoutButton").onclick = async () => {
+    localStorage.removeItem("token");
+    console.log("redirecting");
     window.location.href = "http://127.0.0.1:3000/frontend/pages/login/login.html";
     console.log("done");
-
 }
 
 homeFunction();
