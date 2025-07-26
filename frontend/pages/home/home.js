@@ -19,11 +19,12 @@ const allPostsMapping=async (decoded)=>{
         const posts=allPostsResponse.map(post=>`<div id="postBox">
                 <div id="postAdminDetailsBar"><button id="postProfilePicture"></button>${post.username}</div>
                 <div id="titleBar">${post.titleContent}</div>
+                <div id="textBar">${post.textContent}</div>
                 <div id="postContent"><img
                         src="${post.imageContent}"
                         alt=""></div>
                 <div id="postDetailsBar">
-                    <div><button id="likeButton">Like</button><button id="dislikeButton">Dislike</button></div>
+                    <div><button id="likeButton"><i class="fa fa-thumbs-o-up"></i></button><button id="dislikeButton"><i class="fa fa-thumbs-o-down"></i></button></div>
                     <div id="postedAt">${post.postedAt}</div>
                 </div>
             </div>`);
