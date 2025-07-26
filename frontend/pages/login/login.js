@@ -11,7 +11,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     loadingCircle.style.display = "block";
-    loadingBar.style.backgroundColor = "#c3fe95ff";
+    loadingBar.style.borderColor="#baff7eee"
     loadingStatus.innerText = "Fetching";
     loadingBarContainer.style.display = "flex";
 
@@ -31,7 +31,8 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     const data = await response.json();
     if (data.message != "User logged in successfully.") {
         loadingCircle.style.display = "none";
-        loadingBar.style.backgroundColor = "#fe9795ff";
+        loadingBar.style.borderColor="#ff4d4dee";
+        // loadingBar.style.backgroundColor = "#ffffff10";
         loadingStatus.innerText = data.message;
     }
 
@@ -41,7 +42,8 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         console.log(decoded.username);
         loadingCircle.style.display = "none";
         checkStatus.style.display = "block";
-        loadingBar.style.backgroundColor = "#c3fe95ff";
+        loadingBar.style.borderColor="#baff7eee"
+        // loadingBar.style.backgroundColor = "#ffffff0c";
         loadingStatus.innerText = "User logged in successfully";
         await delay(1000);
         window.location.href = "http://127.0.0.1:3000/frontend/pages/home/home.html";

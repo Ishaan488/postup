@@ -36,7 +36,8 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     };
 
     loadingCircle.style.display = "block";
-    loadingBar.style.backgroundColor = "#c3fe95ff";
+    loadingBar.style.borderColor="#baff7eee"
+    // loadingBar.style.backgroundColor = "#c3fe95ff";
     loadingStatus.innerText = "Fetching";
     loadingBarContainer.style.display = "flex";
 
@@ -56,13 +57,15 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     const data = await response.json();
     if (data.message != "User registered successfully.") {
         loadingCircle.style.display = "none";
-        loadingBar.style.backgroundColor = "#fe9795ff";
+        loadingBar.style.borderColor="#ff4d4dee";
+        // loadingBar.style.backgroundColor = "#fe9795ff";
         loadingStatus.innerText = data.message;
     }
     if (data.message === "User registered successfully.") {
         loadingCircle.style.display = "none";
         checkStatus.style.display = "block";
-        loadingBar.style.backgroundColor = "#c3fe95ff";
+        loadingBar.style.borderColor="#baff7eee"
+        // loadingBar.style.backgroundColor = "#c3fe95ff";
         loadingStatus.innerText = "User registered successfully";
         await delay(1000);
         window.location.href = "http://127.0.0.1:3000/frontend/pages/login/login.html";

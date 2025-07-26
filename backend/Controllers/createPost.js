@@ -18,6 +18,7 @@ export const createPost =  async (req, res) => {
 
         const { titleContent, textContent, imageContent } = req.body;
         const username=req.params.username;
+        if(imageContent){
         const cloudinaryRes=await cloudinary.uploader.upload(imageContent,{
           folder:"/postup/postup_Posts"
         })
@@ -32,6 +33,18 @@ export const createPost =  async (req, res) => {
             message:"Post created successfully",
             post:{Post}
         })
+    }
+    else{
+        await Post.create({
+            username,
+            titleContent,
+            textContent
+        })
+        res.json({
+            message:"Post created successfully",
+            post:{Post}
+        })
+    }
     }
     catch(error){
         res.json(error);

@@ -4,6 +4,7 @@ const logoutButton = document.getElementById("logoutButton");
 const allPostsContainer = document.getElementById("allPostsContainer");
 const loginFirst = document.getElementById("loginFirst");
 const sideBar=document.getElementById("sidebarContainer");
+const pillbarContainer=document.getElementById("pillbarContainer");
 
 const allPostsMapping=async (decoded)=>{
     const res = await fetch(`http://localhost:5000/api/
@@ -34,6 +35,7 @@ const homeFunction = async () => {
 
     let usernameToken = localStorage.getItem("token");
     if (!usernameToken) {
+        pillbarContainer.style.display="none";
         welcomeMessage.innerHTML = `<a href="http://127.0.0.1:3000/frontend/pages/login/login.html">Login</a>`;
         logoutButton.style.display = "none";
         allPostsContainer.style.display="none";

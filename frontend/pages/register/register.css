@@ -99,12 +99,15 @@ form div {
 }
 
 #loadingBar {
-    background-color: rgb(140, 255, 114);
-    color: black;
+    background-color:#363636;
+    color: rgb(207, 207, 207);
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
+    border:solid;
+    border-color:#9fff4bee;
+    border-width: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,13 +127,15 @@ form div {
 }
 
 #checkStatus{
+    margin: 0;
+    padding: 0;
     display: none;
 }
 
 #loadingStatus{
     margin: 0;
     margin-left: 5px; 
-    font-weight: bold;
+    font-weight: 500;
 }
 
 @keyframes spin {

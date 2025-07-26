@@ -8,6 +8,7 @@ html {
     background-color: #767fad;
     overflow-x: hidden;
     overflow-y: auto;
+    padding-bottom: 80px;
 }
 
 nav {
@@ -34,8 +35,18 @@ nav {
 }
 
 #welcomeMessage {
-    margin-right: 2rem;
+    margin-right: 1rem;
     font-size: medium;
+}
+#welcomeMessage a{
+    font-size: larger;
+    text-decoration: none;
+    margin: 0;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgb(134, 6, 255);
+    color: white;
 }
 
 nav h2 {
@@ -61,6 +72,12 @@ nav h2 {
     display: none;
 }
 
+#homeContent{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
 .sidebarContainer {
     font-family: poppins;
     height: 100%;
@@ -75,7 +92,6 @@ nav h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: n;
     /* justify-content: center; */
 
 }
@@ -112,6 +128,8 @@ nav h2 {
     font-family: poppins;
     margin-left: 20%;
     margin-top: 86px;
+    width:40%;
+    /* background-color: aquamarine; */
     height: auto;
     display: flex;
     flex-direction: column;
@@ -142,7 +160,7 @@ dotlottie-wc {
 #postBox {
     height: auto;
     width: auto;
-    max-width: 700px;
+    width: 100%;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 5px;
@@ -152,6 +170,7 @@ dotlottie-wc {
 #postAdminDetailsBar {
     background-color: #b2b2b2;
     padding: 5px;
+    font-size: small;
     display: flex;
     align-items: center;
     border-top-left-radius: 5px;
@@ -160,8 +179,8 @@ dotlottie-wc {
 }
 
 #postProfilePicture {
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
     /* background-image: url("https://image.lexica.art/full_jpg/a6c473a6-51e3-4679-88bd-31efa77a3599"); */
     background-size: cover;
     background-position: center;
@@ -176,19 +195,22 @@ dotlottie-wc {
 
 #titleBar {
     padding-left: 5px;
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
     background-color: #828282;
 }
 
 #postContent {
     /* padding: 5px; */
     margin-top: 0px;
-    max-width: 680px;
+    /* min-width: 80%;
+    max-width: 100%; */
+    width: 100%;
     height: auto;
 }
 
 #postContent img {
-    max-width: 680px;
+    width: 100%;
 }
 
 #postDetailsBar {
@@ -208,12 +230,17 @@ dotlottie-wc {
     .sidebarContainer {
         display: none;
     }
+    #homeContent{
+        display: flex;
+        justify-content: center;
+    }
 
     #pillbarContainer {
         width: 100%;
         display: flex;
         justify-content: center;
         position: fixed;
+        z-index: 2;
         bottom: 10px;
     }
 
@@ -241,7 +268,7 @@ dotlottie-wc {
         font-family: poppins;
         margin-left: 0;
         margin-top: 90px;
-        width: 100%;
+        width: 70vw;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -253,13 +280,25 @@ dotlottie-wc {
     #postContent {
         /* padding: 5px; */
         margin-top: 0px;
-        min-width: 80vw;
-        max-width: 90vw;
+        min-width: 50vw;
+        max-width: 70vw;
         height: auto;
     }
 
     #postContent img {
-        min-width: 80vw;
-        max-width: 100%;
+        min-width: 50vw;
+        max-width: 70vw;
     }
+
+    #welcomeMessage {
+        margin-right: 10px;
+        font-size:small;
+        padding: 0;
+    }
+    nav h2 {
+    padding-left: 0px;
+    margin-right: 10px;
+    font-size:larger;
+    align-self: center;
 }
+}   
