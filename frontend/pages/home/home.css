@@ -287,7 +287,7 @@ dotlottie-wc {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        background: rgba(0, 0, 0, 0.116);
+        background: rgba(28, 28, 28, 0.408);
         backdrop-filter: blur(10px);
         border-radius: 25px;
     }
@@ -297,7 +297,7 @@ dotlottie-wc {
     }
 
     #pillbar a {
-        color: rgb(0, 0, 0);
+        color: rgb(230, 230, 230);
     }
 
     #allPostsContainer {
@@ -338,4 +338,65 @@ dotlottie-wc {
     font-size:larger;
     align-self: center;
 }
-}   
+}
+
+/* Fixed Contact pillbar */
+
+    .pill-nav {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 50;
+            display: none;
+        }
+
+        .pill-nav .bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pill-nav a {
+            padding: 0.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .pill-nav a:hover {
+            background-color: rgba(55, 65, 81, 0.5);
+        }
+
+        .pill-nav a:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #60a5fa; /* Default focus ring, can be customized */
+        }
+        
+        .pill-nav svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #d1d5db;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .pill-nav a:hover svg {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }   
