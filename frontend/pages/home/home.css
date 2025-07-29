@@ -38,7 +38,8 @@ nav {
     margin-right: 1rem;
     font-size: medium;
 }
-#welcomeMessage a{
+
+#welcomeMessage a {
     font-size: larger;
     text-decoration: none;
     margin: 0;
@@ -72,11 +73,11 @@ nav h2 {
     display: none;
 }
 
-#homeContent{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+#homeContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 .sidebarContainer {
     font-family: poppins;
@@ -128,7 +129,7 @@ nav h2 {
     font-family: poppins;
     margin-left: 20%;
     margin-top: 86px;
-    width:40%;
+    width: 40%;
     /* background-color: aquamarine; */
     height: auto;
     display: flex;
@@ -204,7 +205,7 @@ dotlottie-wc {
     background-color: rgba(14, 14, 14, 0);
 }
 
-#textBar{
+#textBar {
     font-size: small;
     padding-left: 5px;
     width: 100%;
@@ -226,7 +227,7 @@ dotlottie-wc {
     border-radius: 10px;
 }
 
-#postDetailsBar {           
+#postDetailsBar {
     padding: 0px;
     background-color: rgba(14, 14, 14, 0);
     color: #878787;
@@ -238,25 +239,28 @@ dotlottie-wc {
     border: none;
 }
 
-#likeButton{
+#likeButton {
     background-color: #11111100;
     border: none;
-    margin:5px;
+    margin: 5px;
     cursor: pointer;
 }
-#likeButton i{
+
+#likeButton i {
     color: rgb(177, 255, 104);
-    font-size:x-large;
+    font-size: x-large;
 }
-#dislikeButton{
+
+#dislikeButton {
     background-color: #11111100;
     border: none;
-    margin:5px;
+    margin: 5px;
     cursor: pointer;
 }
-#dislikeButton i{
+
+#dislikeButton i {
     color: rgb(255, 134, 104);
-    font-size:x-large;
+    font-size: x-large;
 }
 
 #postedAt {
@@ -267,7 +271,8 @@ dotlottie-wc {
     .sidebarContainer {
         display: none;
     }
-    #homeContent{
+
+    #homeContent {
         display: flex;
         justify-content: center;
     }
@@ -329,74 +334,207 @@ dotlottie-wc {
 
     #welcomeMessage {
         margin-right: 10px;
-        font-size:small;
+        font-size: small;
         padding: 0;
     }
+
     nav h2 {
-    padding-left: 0px;
-    margin-right: 10px;
-    font-size:larger;
-    align-self: center;
-}
+        padding-left: 0px;
+        margin-right: 10px;
+        font-size: larger;
+        align-self: center;
+    }
 }
 
 /* Fixed Contact pillbar */
 
-    .pill-nav {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 50;
-            display: none;
-        }
+.pill-nav {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    /* display: none; */
+}
 
-        .pill-nav .bar {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: rgba(17, 24, 39, 0.8);
-            backdrop-filter: blur(4px);
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+.pill-nav .bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        .pill-nav a {
-            padding: 0.5rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease-in-out;
-        }
+.pill-nav a {
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease-in-out;
+}
 
-        .pill-nav a:hover {
-            background-color: rgba(55, 65, 81, 0.5);
-        }
+.pill-nav a:hover {
+    background-color: rgba(55, 65, 81, 0.5);
+}
 
-        .pill-nav a:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px #60a5fa; /* Default focus ring, can be customized */
-        }
-        
-        .pill-nav svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: #d1d5db;
-            transition: all 0.3s ease-in-out;
-        }
+.pill-nav a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #60a5fa;
+    /* Default focus ring, can be customized */
+}
 
-        .pill-nav a:hover svg {
-            color: white;
-            transform: translateY(-2px);
-        }
+.pill-nav svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #d1d5db;
+    transition: all 0.3s ease-in-out;
+}
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }   
+.pill-nav a:hover svg {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* -----------------------------CREATE POST DIALOG BOX-------------------------------------------------------------- */
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* --- Dialog Form Container --- */
+.dialog-form {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-sizing: border-box;
+}
+
+.dialog-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+}
+
+/* --- Input & Label Styling --- */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dialog-form label {
+    font-weight: 500;
+    color: #3c4858;
+    font-size: 0.9rem;
+}
+
+.dialog-form input,
+.dialog-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #dce1e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dialog-form input[type="file"] {
+    padding: 0.5rem 1rem;
+}
+
+.dialog-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.dialog-form input:focus,
+.dialog-form textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+/* --- Image Preview Styling --- */
+.image-preview {
+    width: 100%;
+    max-height: 150px;
+    border-radius: 8px;
+    object-fit: contain;
+    margin-top: 0.25rem;
+    display: none;
+    border: 1px solid #eef0f2;
+    background-color: #f9fafb;
+}
+
+/* --- Button Group & Button Styling --- */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.btn {
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-submit {
+    background-color: #4a90e2;
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(74, 144, 226, 0.39);
+}
+
+.btn-submit:hover {
+    background-color: #357abd;
+}
+
+.btn-cancel {
+    background-color: #f1f3f5;
+    color: #3c4858;
+}
+
+.btn-cancel:hover {
+    background-color: #e9ecef;
+}
