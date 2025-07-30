@@ -422,6 +422,7 @@ dotlottie-wc {
     align-items: center;
     padding: 1rem;
     box-sizing: border-box;
+    z-index: -5;  
 }
 
 /* --- Dialog Form Container --- */

@@ -23,12 +23,12 @@
         <div class="sidebar">
             <a href=""><i class="fa fa-fw fa-home"></i> Home</a>
             <a href=""><i class="fa fa-fw fa-user"></i> Account</a>
-            <span id="createPostSidebar"><i class="fa fa-pencil-square-o"></i> Create Post</span>
+            <a id="createPostSidebar"><i class="fa fa-pencil-square-o"></i> Create Post</a>
             <a href=""><i class="fa fa-fw fa-image"></i> My Posts</a>
             <a href="" id="logoutButton"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         </div>
     </div>
-    <div id="pillbarContainer">
+    <div id="pillbarContainer"> 
         <div id="pillbar">
             <a href=""><i class="fa fa-fw fa-home"></i></a>
             <a href=""><i class="fa fa-fw fa-user"></i></a>
@@ -56,19 +56,19 @@
 
                 <div class="input-group">
                     <label for="text">Text</label>
-                    <textarea id="text" name="text" required></textarea>
+                    <input type="text" id="text" name="text" required></input>
                 </div>
 
                 <div class="input-group">
                     <label for="image">Image</label>
-                    <input type="file" id="image" name="image" accept="image/*">
+                    <input type="file" id="image" name="image">
                     <!-- Image preview element -->
                     <img id="imagePreview" class="image-preview" src="#" alt="Image Preview" />
                 </div>
 
                 <div class="button-group">
                     <button type="button" class="btn btn-cancel" id="btn btn-cancel">Cancel</button>
-                    <button type="submit" class="btn btn-submit">Submit</button>
+                    <input type="submit" class="btn btn-submit" id="btn btn-submit"></input>
                 </div>
             </form>
         </div>
